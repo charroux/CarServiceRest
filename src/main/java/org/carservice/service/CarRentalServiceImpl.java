@@ -37,6 +37,7 @@ public class CarRentalServiceImpl implements CarService{
         }
         CarJPA carJPA = cars.get(0);
         carJPA.setRented(true);
+        carRepository.save(carJPA);
     }
     @Override
     public void getBack(String plateNumber) throws CarNotFoundException {
@@ -46,6 +47,7 @@ public class CarRentalServiceImpl implements CarService{
         }
         CarJPA carJPA = cars.get(0);
         carJPA.setRented(false);
+        carRepository.save(carJPA);
     }
 
     @Override
